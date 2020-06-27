@@ -15,6 +15,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 /**
  *
  * @author danny
@@ -35,7 +36,9 @@ public class Tarea1 extends Application{
 		Button boton2 = new Button("Color Verde");
 		Button boton3 = new Button("Color Azul");
 		HBox caja = new HBox(boton1,boton2,boton3);
+		
 		caja.setSpacing(15);
+		caja.setAlignment(Pos.CENTER);
 		StackPane root = new StackPane();
 		root.getChildren().addAll(caja);
 		Scene scene = new Scene(root,300,300);
