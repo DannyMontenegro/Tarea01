@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Observer;
+package App;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -29,6 +29,22 @@ public class Tarea1 extends Application{
     public static void main(String[] args) {
     	launch(args);
     }
+    
+    public static void pintarColorRojo(Pane pane) {
+    	pane.setStyle("-fx-background-color:red;");
+    	
+    }
+    
+    public static void pintarColorVerde(Pane pane) {
+    	pane.setStyle("-fx-background-color:green;");
+    	
+    }
+
+    public static void pintarColorAzul(Pane pane) {
+    	pane.setStyle("-fx-background-color:blue;");
+    	
+    }
+
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -42,10 +58,16 @@ public class Tarea1 extends Application{
 		StackPane root = new StackPane();
 		root.getChildren().addAll(caja);
 		Scene scene = new Scene(root,300,300);
-		Listener.setStyle(boton1, root, "red");
-		Listener.setStyle(boton2, root, "green");
-		Listener.setStyle(boton3, root, "blue");
+		boton1.setOnAction(e->{
+			pintarColorRojo(root);
+		});
 		
+		boton2.setOnAction(e->{
+			pintarColorVerde(root);
+		});
+		boton3.setOnAction(e->{
+			pintarColorAzul(root);
+		});
 		primaryStage.setTitle("Tarea01");
 		primaryStage.setScene(scene);
 		primaryStage.show();
