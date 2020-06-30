@@ -11,6 +11,7 @@ public aspect EventManager {
 	pointcut Rojo(): execution(* pintarColorRojo(..));
 	pointcut Verde(): execution(* pintarColorVerde(..));
 	pointcut Azul(): execution(* pintarColorAzul(..));
+	pointcut Contador(): execution(* pintar*(..));
 	
 	after(): Rojo(){
 		observador.setStatus("rojo");
@@ -20,5 +21,10 @@ public aspect EventManager {
 	}
 	after(): Azul(){
 		observador.setStatus("azul");
+	}
+	
+	after(): Contador(){
+		observador.aumentarContador();
+		System.out.println("La pantalla ha cambiado de color "+observador.getContador()+" veces");
 	}
 }

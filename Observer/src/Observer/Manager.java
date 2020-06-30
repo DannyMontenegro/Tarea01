@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Manager {
 	private ArrayList<Listener> listeners = new ArrayList<>();
 	private String status;
+	private int contador=0;
 	
 	public String getStatus() {
 		return status;
@@ -13,6 +14,14 @@ public class Manager {
 	public void setStatus(String estado) {
 		status = estado;
 		notificacion();																										
+	}
+	
+	public void aumentarContador() {
+		contador++;
+	}
+	
+	public int getContador() {
+		return contador;
 	}
 	
 	public void notificacion() {
